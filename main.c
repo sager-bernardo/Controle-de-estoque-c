@@ -70,7 +70,7 @@ void remover_item(){
 
     f = fopen("inventory.txt", "w");
     if (!f){
-        printf("Erro.\n");
+        printf("Item nao encontrado.\n");
         return;
     }
     for (int i = 0; i < total; i++) {
@@ -91,7 +91,7 @@ void listar_estoque(){
 
     FILE *f = fopen("inventory.txt", "r");
     if (!f){
-        printf("Erro.\n");
+        printf("O estoque está vazio.\n");
         return;
     }
     while (fscanf(f, " %[^\n] %d", linha_nome, &linha_qtd) == 2) {
